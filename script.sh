@@ -12,19 +12,24 @@ echo "removed all the bloat"
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf groupupdate core -y
 sudo dnf install rpmfusion-nonfree-release-tainted -y
-sudo dnf upgrade -y --alowerasing
+sudo dnf upgrade -y --allowerasing
 sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware" -y
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y --alowerasing
-sudo dnf groupupdate sound-and-video -y --alowerasing
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y --allowerasing
+sudo dnf groupupdate sound-and-video -y --allowerasing
 sudo dnf install intel-media-driver libva-intel-driver -y
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
 sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
 echo "rpm fusion is fully setup"
 
 # Installing some software
-sudo dnf in chromium-freeworld thunderbird kgpg thermald plasma-browser-integration ktorrent -y
+sudo dnf in chromium-freeworld plasma-thunderbird kgpg thermald plasma-browser-integration ktorrent -y
 sudo systemctl enable thermald
 echo "all the apps installed, and thermald has been enabled"
+
+# wine
+sudo dnf in wine vulkan-loader vulkan-loader.i686 -y
+wine a
+echo "wine setup and ready to use "
 
 # hblock
 sudo dnf in shasum -y
