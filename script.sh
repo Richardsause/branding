@@ -49,8 +49,10 @@ sudo systemctl enable auto-cpufreq
 notify-send "auto-cpufreq is working"
 
 ## Flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak --system remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-delete fedora
 sudo flatpak update -y
 sudo flatpak install org.gtk.Gtk3theme.Breeze -y
 sudo flatpak override --filesystem=xdg-config/gtk-3.0:ro
