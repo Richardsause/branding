@@ -6,7 +6,7 @@ echo "updated the system"
 
 # Removing software
 sudo dnf rm *akonadi* *akregator* *games* *krfb* *krdc* kwrite *konversation* *abrt* *firefox* *qt5-qdbusviewer* *power-profiles-daemon* -y
-echo "removed all the bloat"
+notify-send "removed all the bloat"
 
 # Installing RPM fusion
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
@@ -19,7 +19,7 @@ sudo dnf groupupdate sound-and-video -y --allowerasing
 sudo dnf install intel-media-driver libva-intel-driver -y
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
 sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
-echo "rpm fusion is fully setup"
+notify-send "rpm fusion is fully setup"
 
 # Installing some software
 sudo dnf in chromium-freeworld thunderbird kgpg thermald plasma-browser-integration ktorrent -y
@@ -29,7 +29,7 @@ echo "all the apps installed, and thermald has been enabled"
 # wine
 sudo dnf in wine vulkan-loader vulkan-loader.i686 -y
 wine a
-echo "wine setup and ready to use "
+notify-send "wine setup and ready to use "
 
 # hblock
 sudo dnf in perl-Digest-SHA -y
@@ -39,13 +39,13 @@ curl -o /tmp/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.4.0/hbl
   && sudo chown 0:0 /usr/local/bin/hblock \
   && sudo chmod 755 /usr/local/bin/hblock
 sudo systemctl enable hblock.timer
-echo "hblock is working"
+notify-send "hblock is working"
 
 # auto-cpufreq
 sudo dnf in plasma-discover-snap snapd -y
 sudo snap install auto-cpufreq -y
 sudo systemctl enable auto-cpufreq
-echo "auto-cpufreq is working"
+notify-send "auto-cpufreq is working"
 
 ## Flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
@@ -54,7 +54,7 @@ sudo flatpak install org.gtk.Gtk3theme.Breeze -y
 sudo flatpak override --filesystem=xdg-config/gtk-3.0:ro
 sudo flatpak override --filesystem=xdg-config/gtk-4.0:ro
 sudo flatpak override --filesystem=xdg-config/gtk-2.0:ro
-echo "flatpak is configured"
+notify-send "flatpak is configured"
 
 ## Fixing the system
 sudo systemctl disable systemd-oomd
@@ -62,7 +62,7 @@ sudo systemctl disable systemd-oomd
 sudo chattr +C /swap/
 sudo dd if=/dev/zero of=/swap/swapfile bs=1M count=4096 status=progress
 sudo echo "/swap/swapfile none swap pri=0,discard 0 0" >> /etc/fstab
-echo "swap is configured"
+notify-send "swap is configured"
 
 # fixing up the cursors
 mkdir ~/.icons/
@@ -70,7 +70,7 @@ mkdir ~/.icons/default
 echo "[Icon Theme]" > ~/.icons/default/index.theme
 echo "Inherits=breeze_cursors" >> ~/.icons/default/index.theme
 ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
-echo "default cursor theme added to plasma settings"
+notify-send "default cursor theme added to plasma settings"
 
 # fixing up the cursors on /etc/skel
 sudo mkdir /etc/skel/.icons/
@@ -78,7 +78,7 @@ sudo mkdir /etc/skel/.icons/default
 sudo echo "[Icon Theme]" > /etc/skel/.icons/default/index.theme
 sudo echo "Inherits=breeze_cursors" >> /etc/skel/.icons/default/index.theme
 sudo ln -s /usr/share/icons/breeze_cursors/cursors /etc/skel/.icons/default/cursors
-echo "default cursor theme added to plasma settings on /etc/skel"
+notify-send "default cursor theme added to plasma settings on /etc/skel"
 
 cd ~/"Área de trabalho"
 curl https://raw.githubusercontent.com/Richardsause/branding/main/trash%3A%E2%81%84.desktop > ~/"Área de trabalho"/"Lixeira.desktop"
@@ -97,5 +97,8 @@ chmod +x wallpaper.sh
 ./wallpaper.sh
 plasma-apply-colorscheme BreezeRRT
 /usr/lib/plasma-changeicons breeze-dark
-echo "branding downloaded, and applied, removing stuff in ~/Downloads"
+plasma-apply-cursortheme default
+notify-send "all the branding was downloaded and is waiting to be applied, doing a cleanup..."
 sudo rm -rf ~/Downloads/*
+echo "you have some stuff to do! add intel_pstate=disable in /etc/default/grub, change color scheme accent, change panel size, remove the ugly fedora icon in kickoff, and also enable detailed telemetry" > ~/"Área de trabalho"/chores
+kate ~/"Área de trabalho"/chores && rm ~/"Área de trabalho"/chores
