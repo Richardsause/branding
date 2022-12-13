@@ -68,6 +68,11 @@ sudo dd if=/dev/zero of=/swap/swapfile bs=1M count=4096 status=progress
 sudo echo "/swap/swapfile none swap pri=0,discard 0 0" >> /etc/fstab
 notify-send "swap is configured"
 
+# grub
+sudo curl https://raw.githubusercontent.com/Richardsause/branding/main/grub > /etc/default/grub
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+notify-send "grub has been configured"
+
 # fixing up the cursors
 mkdir ~/.icons/
 mkdir ~/.icons/default
