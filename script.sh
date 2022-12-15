@@ -74,20 +74,22 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 notify-send "grub has been configured"
 
 # fixing up the cursors
-mkdir ~/.icons/
-mkdir ~/.icons/default
-echo "[Icon Theme]" > ~/.icons/default/index.theme
-echo "Inherits=breeze_cursors" >> ~/.icons/default/index.theme
-ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
+mkdir ~/.local/share/icons
+mkdir ~/.local/share/icons/default
+echo "[Icon Theme]" > ~/.local/share/icons/default/index.theme
+echo "Inherits=breeze_cursors" >> ~/.local/share/icons/default/index.theme
+ln -s /usr/share/icons/breeze_cursors/cursors ~/.local/share/icons/default/
 notify-send "default cursor theme added to plasma settings"
 
 # fixing up the cursors on /etc/skel
-sudo mkdir /etc/skel/.icons/
-sudo mkdir /etc/skel/.icons/default
-sudo echo "[Icon Theme]" > /etc/skel/.icons/default/index.theme
-sudo echo "Inherits=breeze_cursors" >> /etc/skel/.icons/default/index.theme
-sudo ln -s /usr/share/icons/breeze_cursors/cursors /etc/skel/.icons/default/cursors
-notify-send "default cursor theme added to plasma settings on /etc/skel"
+sudo mkdir /etc/skel/.local/
+sudo mkdir /etc/skel/.local/share
+sudo mkdir /etc/skel/.local/share/icons
+sudo mkdir /etc/skel/.local/share/icons/default
+sudo echo "[Icon Theme]" > /etc/skel/.local/share/icons/default/index.theme
+sudo echo "Inherits=breeze_cursors" >> /etc/skel/.local/share/icons/default/index.theme
+sudo ln -s /usr/share/icons/breeze_cursors/cursors /etc/skel/.local/share/icons/default/
+notify-send "default cursor theme added to plasma settings in /etc/skel"
 
 cd ~/"Área de trabalho"
 curl https://raw.githubusercontent.com/Richardsause/branding/main/trash%3A%E2%81%84.desktop > ~/"Área de trabalho"/"Lixeira.desktop"
