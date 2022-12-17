@@ -54,6 +54,11 @@ sudo mkdir -p /etc/skel/.local/share/wallpapers
 sudo cp -r wallpaper.png /etc/skel/.local/share/wallpapers
 notify-send "branding copied over to skel"
 
+# trashbin on the desktop
+sudo mkdir -p /etc/skel/"Área de trabalho"/
+sudo cp trash.desktop /etc/skel/"Área de trabalho"/
+notify-send "trashbin added to the desktop on /etc/skel"
+
 ## /home/richard/
 # desktop theme
 mkdir -p ~/.local/share/plasma/desktoptheme
@@ -70,4 +75,9 @@ mkdir -p ~/.local/share/wallpapers
 cp -r wallpaper.png ~/.local/share/wallpapers
 plasma-apply-wallpaperimage "//home/cliente/.local/share/wallpapers/wallpaper.png"
 notify-send "branding applied to home"
+
+# trashbin on the desktop
+cp trash.desktop ~/"Área de trabalho"/
+notify-send "trashbin added to the desktop on home"
+
 notify-send "everything left to you is to fix the desktop"
