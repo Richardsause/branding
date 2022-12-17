@@ -3,6 +3,10 @@
 sudo rpm-ostree upgrade
 notify-send "upgraded the system via rpm-ostree"
 
+### Wine
+sudo rpm-ostree install wine vulkan-loader.i686
+notify-send "wine has been installed and configured in the system, please reboot"
+
 ### Cursor fix
 ## /etc/skel
 sudo mkdir -p /etc/skel/.local/share/icons/default
