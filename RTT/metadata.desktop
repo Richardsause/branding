@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Tema padrão rtt
+X-KDE-PluginInfo-Author=Richard
+X-KDE-PluginInfo-Name=RTT
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://www.instagram.com/richardrealtech/
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=LGPL
+X-KDE-PluginInfo-EnabledByDefault=true
+
+[ContrastEffect]
+enabled=false
+contrast=0.2
+intensity=0.4
+saturation=1.7
+
+[AdaptiveTransparency]
+enabled=true
