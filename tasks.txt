@@ -1,0 +1,6 @@
+heres what you have to do :
+    - change panel height to 53
+    - change default browser
+    - pin chrome to the task bar
+    - change the fonts to inter
+    - remove the ugly fedora icon from the start menu
