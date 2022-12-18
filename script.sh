@@ -16,4 +16,7 @@ sudo sh ./cursorfixsu.sh
 sudo sh ./brandingsu.sh
 sh ./branding.sh
 
-notify-send "everything left to you is to do the final touches"
+## fonts
+sh ./fonts.sh
+
+kwrite ./tasks.txt
