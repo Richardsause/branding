@@ -33,7 +33,13 @@ notify-send "default cursor theme applied to home"
 ### Flathub
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-delete fedora
+flatpak install org.gtk.Gtk3theme.Breeze -y
+sudo flatpak override --env GTK_THEME=Breeze
 notify-send "flathub remote added"
+
+## Flatpak patch
+sudo flatpak override --filesystem=xdg-config/gtk-3.0:ro
+notify-send "flatpak fixed"
 
 ## Applications
 flatpak install libreoffice gimp kate chromium -y
