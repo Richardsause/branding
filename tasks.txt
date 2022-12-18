@@ -4,3 +4,4 @@ heres what you have to do :
     - pin chrome to the task bar
     - change the fonts to inter
     - remove the ugly fedora icon from the start menu
+    - change accent color to wallpaper
