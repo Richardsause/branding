@@ -14,8 +14,8 @@ plasma-apply-colorscheme rrt
 mkdir -p ~/.local/share/wallpapers
 cp -r wallpaper.png ~/.local/share/wallpapers
 plasma-apply-wallpaperimage "//home/cliente/.local/share/wallpapers/wallpaper.png"
-notify-send "branding applied to home"
+#notify-send "branding applied to home"
 
 # trashbin on the desktop
 cp trash.desktop ~/"Área de trabalho"/
-notify-send "trashbin added to the desktop on home"
+#notify-send "trashbin added to the desktop on home"

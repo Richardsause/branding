@@ -5,4 +5,4 @@ sudo echo "[Icon Theme]
 Inherits=breeze_cursors" > ~/.local/share/icons/default/index.theme
 sudo ln -s /usr/share/icons/breeze_cursors/cursors ~/.local/share/icons/default/
 plasma-apply-cursortheme default
-notify-send "cursor fix applied to current user"
+#notify-send "cursor fix applied to current user"

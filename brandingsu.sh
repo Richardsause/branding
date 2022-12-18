@@ -11,9 +11,9 @@ cp rrt.colors /etc/skel/.local/share/color-schemes/
 # wallpaper
 mkdir -p /etc/skel/.local/share/wallpapers
 cp -r wallpaper.png /etc/skel/.local/share/wallpapers
-notify-send "branding copied over to skel"
+#notify-send "branding copied over to skel"
 
 # trashbin on the desktop
 sudo mkdir -p /etc/skel/"Área de trabalho"/
 sudo cp trash.desktop /etc/skel/"Área de trabalho"/
-notify-send "trashbin added to the desktop skel"
+#notify-send "trashbin added to the desktop skel"
