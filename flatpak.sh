@@ -13,4 +13,5 @@ flatpak override --filesystem=xdg-config/gtk-3.0:ro
 
 ## Applications
 flatpak install org.libreoffice.LibreOffice org.kde.kate org.gimp.GIMP com.google.Chrome -y
+flatpak install org.winehq.Wine/x86_64/stable-22.08 org.winehq.Wine.gecko/x86_64/stable-22.08 org.winehq.Wine.mono/x86_64/stable-22.08 -y
 #notify-send "Flatpak applications are installed on the system"

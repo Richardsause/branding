@@ -7,9 +7,10 @@ sudo sh ./swap.sh
 notify-send "ran the swap script"
 
 ## Applications
-sudo sh ./wine.sh
-wine a
+#sudo sh ./wine.sh
+#wine a
 sudo sh flatpak.sh
+flatpak run org.winehq.Wine a
 notify-send "wine and flatpak are all setup"
 
 ## cursor fix
