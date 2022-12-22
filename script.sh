@@ -8,6 +8,7 @@ notify-send "ran the swap script"
 
 ## Applications
 sudo sh ./wine.sh
+wine a
 sudo sh flatpak.sh
 notify-send "wine and flatpak are all setup"
 
