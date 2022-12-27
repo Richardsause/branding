@@ -1,7 +1,8 @@
 #!/bin/sh
 ## System
-sudo rpm-ostree upgrade
-notify-send "upgraded the system via rpm-ostree"
+sudo sh ./debloat.sh
+sudo dnf upgrade -y
+notify-send "upgraded the system"
 
 sudo sh ./swap.sh
 notify-send "ran the swap script"
@@ -12,6 +13,8 @@ notify-send "ran the swap script"
 sudo sh flatpak.sh
 flatpak run org.winehq.Wine a
 notify-send "wine and flatpak are all setup"
+sudo sh wine.sh
+wine a
 
 ## cursor fix
 sh ./cursorfix.sh
