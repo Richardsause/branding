@@ -11,10 +11,11 @@ notify-send "ran the swap script"
 #sudo sh ./wine.sh
 #wine a
 sudo sh flatpak.sh
-flatpak run org.winehq.Wine a
-notify-send "wine and flatpak are all setup"
+#flatpak run org.winehq.Wine a
+notify-send "flatpak is setup"
 sudo sh wine.sh
 wine a
+notify-send "wine is setup"
 
 ## cursor fix
 sh ./cursorfix.sh
