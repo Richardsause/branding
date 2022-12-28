@@ -13,6 +13,10 @@ mkdir -p /etc/skel/.local/share/wallpapers
 cp -r wallpaper.png /etc/skel/.local/share/wallpapers
 #notify-send "branding copied over to skel"
 
+# icon
+sudo mkdir -p /etc/skel/.icons/
+sudo cp start-here.svg /etc/skel/.icons/
+
 # trashbin on the desktop
 sudo mkdir -p /etc/skel/"Área de trabalho"/
 sudo cp trash.desktop /etc/skel/"Área de trabalho"/
