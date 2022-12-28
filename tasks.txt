@@ -7,3 +7,4 @@ heres what you have to do :
     - change accent color to wallpaper
     - change icon theme to breeze dark
     - change the taskbar icons order
+    - change the start menu item
