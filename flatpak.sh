@@ -12,5 +12,5 @@ flatpak override --filesystem=xdg-config/gtk-3.0:ro
 #notify-send "Breeze gtk3 is installed, and properly configured on the system"
 
 ## Applications
-flatpak install com.google.Chrome org.mozilla.firefox -y
+flatpak install com.google.Chrome org.mozilla.firefox org.videolan.VLC org.kde.elisa -y
 #notify-send "Flatpak applications are installed on the system"
