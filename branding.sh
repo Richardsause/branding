@@ -16,6 +16,10 @@ cp -r wallpaper.png ~/.local/share/wallpapers
 plasma-apply-wallpaperimage "//home/cliente/.local/share/wallpapers/wallpaper.png"
 #notify-send "branding applied to home"
 
+# icon
+mkdir -p ~/.icons
+cp start-here.svg ~/.icons/
+
 # trashbin on the desktop
 cp trash.desktop ~/"Área de trabalho"/
 #notify-send "trashbin added to the desktop on home"
