@@ -8,6 +8,7 @@ sudo sh ./swap.sh
 notify-send "ran the swap script"
 
 ## Applications
+sh ./appimage.sh
 #sudo sh ./wine.sh
 #wine a
 sudo sh flatpak.sh
