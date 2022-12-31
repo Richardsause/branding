@@ -38,4 +38,4 @@ sh ./fonts.sh
 sudo sh ./fontssu.sh
 notify-send "fonts have been setup, waiting for manual change"
 
-kwrite ./tasks.txt && cd .. && rm -rf branding
+kwrite ./tasks.txt && cd .. && rm -rf branding && echo " " > ~/.bash_history
