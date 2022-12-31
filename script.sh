@@ -38,5 +38,4 @@ sh ./fonts.sh
 sudo sh ./fontssu.sh
 notify-send "fonts have been setup, waiting for manual change"
 
-sudo dnf in kate -y
-kate ./tasks.txt && cd .. && rm -rf branding
+kwrite ./tasks.txt && cd .. && rm -rf branding
